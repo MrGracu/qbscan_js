@@ -22,7 +22,7 @@ List of supported browsers can be found [here](https://caniuse.com/mdn-api_barco
 List of supported code formats can be found [here](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
 
 ## Example
-Example script usage:
+### Example script usage
 ```javascript
 function recognizedBarcodes(response) {
 	if(response.ok === true && response.detected.length > 0) {
@@ -65,4 +65,30 @@ window.onload = async function() {
 		alert('Everything is ok info');
 	}
 };
+```
+### Returned object on initialization
+Example object returned on initialization contains supported formats by current browser and information about errors. If everything is good, then `ok` is set to `true`.
+```javascript
+{
+    "ok": true,
+    "supportedFormats": [
+        "aztec",
+        "code_128",
+        "code_39",
+        "code_93",
+        "codabar",
+        "data_matrix",
+        "ean_13",
+        "ean_8",
+        "itf",
+        "pdf417",
+        "qr_code",
+        "upc_a",
+        "upc_e"
+    ],
+    "barcodeDetectorSupport": true,
+    "accessCameraDevice": true,
+    "userMediaSupport": true,
+    "erorMessage": ""
+}
 ```
