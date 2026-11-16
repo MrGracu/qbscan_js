@@ -1,0 +1,290 @@
+body {
+	margin: 0;
+	font-family: Arial;
+}
+
+.link-effect {
+	text-decoration: none;
+	color: inherit;
+}
+
+.link-effect:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#container-loading {
+	padding-top: 10px;
+	width: 150px;
+	margin: 0 auto;
+}
+.loading {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	background: #939393;
+	position: relative;
+	animation: loading 1s infinite;
+	animation-timing-function: linear;
+}
+@keyframes loading {
+	0%   {left: 0;}
+	50%  {left: 140px;}
+	100% {left: 0;}
+}
+
+#container-camera {
+	position: relative;
+	max-width: 100%;
+	margin-top: 10px;
+}
+
+#container-select-options {
+	font-size: 14px;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#container-select-options .elem-container {
+	padding-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#container-btn-options {
+	font-size: 14px;
+	text-align: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+#container-btn-options .elem-container .button {
+	border: solid 1px #b0b0b0;
+	font-size: 14px;
+	color: #1e1e1e;
+	background-color: #FFFFFF;
+	padding: 2px 6px 4px;
+	display: inline-block;
+}
+
+#container-btn-options .elem-container .button:hover {
+	border: solid 1px #777;
+	color: #111;
+	background-color: #EEE;
+	text-decoration: none;
+}
+
+#container-btn-options .elem-container .button:active {
+	border: solid 1px #666;
+	color: #000;
+	background-color: #DDD;
+}
+
+#container-btn-options .elem-container {
+	padding-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#github-container {
+	display: inline-block;
+	position: fixed;
+	bottom: 0;
+	right: 20px;
+	border: 2px solid #a7a7a7;
+	border-bottom-width: 0;
+	border-radius: 5px 5px 0px 0px;
+	padding: 2px 2px 1px;
+	background-color: #ebebeb;
+	opacity: 0.5;
+}
+
+#github-container:hover {
+	opacity: 1;
+}
+
+.d-inline-block {
+	display: inline-block;
+}
+
+.mb-1 {
+	margin-bottom: 2px;
+}
+
+.mb-2 {
+	margin-bottom: 4px;
+}
+
+.mt-2 {
+	margin-bottom: 4px;
+}
+
+.px-2 {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.form {
+	margin-top: 12px;
+	text-align: end;
+}
+
+.form input {
+	font-size: 15px;
+	cursor: pointer;
+	padding: 2px 6px 4px;
+}
+
+.color-gray {
+	color: gray;
+}
+
+.d-none {
+	display: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+#page-title {
+	text-align: center;
+	margin: 10px 0;
+	color: #5c5c5c;
+	line-height: 0.9em;
+}
+
+#page-title span {
+	font-size: 12px;
+	color: #666666;
+}
+
+#video-player {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+#screenshot {
+	max-width: 100%;
+}
+
+#screen-preview {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	/*padding: 0 20px;*/
+	background-color: #000000d9;
+	overflow-y: auto;
+	width: 100%;
+	text-align: center;
+}
+
+#videoSource {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	opacity: 0.5;
+	background-color: #ddd;
+	outline: none;
+}
+
+#btnScreenshot {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	opacity: 0.5;
+}
+
+#btnFlash {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	opacity: 0.5;
+}
+
+#acceptImage {
+	opacity: 0.6;
+}
+
+#cancelImage {
+	opacity: 0.6;
+}
+
+#screenshot-container {
+	/*width: 100%;*/
+	margin-top: 6%;
+	margin-bottom: 6%;
+	position: relative;
+	display: inline-block;
+}
+
+#decision-container {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+}
+
+#decision-container button {
+	padding: 8px 14px;
+}
+
+#videoSource:hover,
+#btnScreenshot:hover,
+#btnFlash:active,
+#cancelImage:hover,
+#acceptImage:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.main > div > br {
+	display: none;
+}
+
+.main > div {
+	padding-bottom: 10px;
+}
+
+.no-overflow-y {
+	overflow-y: hidden;
+}
+
+#form_save_photo {
+	display: inline-block;
+}
+
+.errorMessage {
+	padding-top: 10px;
+	text-align: center;
+	font-size: 20px;
+	color: red;
+}
+
+#detectedText {
+	position: absolute;
+	top: 6px;
+	margin: 0;
+	left: 0;
+	background-color: #ffffffc9;
+	width: 100%;
+	font-size: 14px;
+	color: #1c1c1c;
+	text-align: center;
+	overflow-y: hidden;
+	padding: 6px 0;
+}
