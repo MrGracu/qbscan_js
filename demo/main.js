@@ -40,6 +40,21 @@ function cancelAccept() {
 	addClass(acceptPhoto, 'd-none');
 }
 
+// Link only for http(s) URLs; anything else (javascript:, data:, text) stays plain text
+function barcodeValueNode(value) {
+	let url = null;
+	try { url = new URL(value.trim()); } catch(e) {}
+	if(url && (url.protocol === 'http:' || url.protocol === 'https:')) {
+		let link = document.createElement('a');
+		link.href = url.href;
+		link.target = '_blank';
+		link.rel = 'noopener noreferrer';
+		link.textContent = value;
+		return link;
+	}
+	return document.createTextNode(value);
+}
+
 function recognizedBarcodes(response) {
 	if(response.ok === true && response.detected.length > 0) {
 		//console.log(response.detectedTime);
@@ -61,8 +76,10 @@ function recognizedBarcodes(response) {
 			ctx.strokeStyle = '#ff0000';
 			ctx.stroke();
 			
-			let barcodeValue = (barcode.rawValue.trim().startsWith('http') ? `<a target="_blank" href="${barcode.rawValue}">${barcode.rawValue}</a>` : barcode.rawValue);
-			textContainer.innerHTML = (textContainer.innerHTML.length > 0 ? '<br/>' : '') + `(${barcode.format}): ${barcodeValue}`;
+			// Scanned content is untrusted: build DOM nodes, never innerHTML
+			if(textContainer.childNodes.length > 0) textContainer.appendChild(document.createElement('br'));
+			textContainer.appendChild(document.createTextNode(`(${barcode.format}): `));
+			textContainer.appendChild(barcodeValueNode(barcode.rawValue));
 		});
 		
 		switchWindow(acceptPhoto, false);
